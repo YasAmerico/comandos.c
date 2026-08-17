@@ -58,3 +58,26 @@ int main() {
 
     return 0;
 }
+
+int main() {
+    int n, original, invertido = 0, resto;
+
+    printf("Digite um numero: ");
+    scanf("%d", &n);
+
+    original = n;
+
+    while (n > 0) {
+        resto = n % 10;
+        invertido = invertido * 10 + resto;
+        n /= 10;
+    }
+
+    if (original == invertido) {
+        printf("O numero e capicua!\n");
+    } else {
+        printf("O numero nao e capicua.\n");
+    }
+
+    return 0;
+}
