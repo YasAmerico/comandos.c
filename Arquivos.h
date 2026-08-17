@@ -78,4 +78,17 @@ int soma_numeros(int limite) {
     }
     return soma;
 }
-
+//verifica se um numero inteiro é capucuo
+int eh_capicua(int n) {
+    if (n < 0) return 0;
+    
+    int original = n;
+    int invertido = 0;
+    
+    while (n > 0) {
+        invertido = invertido * 10 + (n % 10);
+        n /= 10;
+    }
+    
+    return original == invertido;
+}
