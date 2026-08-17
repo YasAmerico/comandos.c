@@ -69,3 +69,13 @@ int calcular_diferenca_dias(int d1,int m1,int d2,int m2){
     int t2= dia_do_ano(d2,m2);
     return abs(t2-t1);
 } 
+//some dos numeros enter dois numeros
+
+int soma_numeros(int limite) {
+    int soma = 0;
+    for (int i = 1; i <= limite; i++) {
+        soma += i;
+    }
+    return soma;
+}
+
