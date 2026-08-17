@@ -42,3 +42,19 @@ int main(){
     printf("dias entre as data: %d\n",resultado);
     return 0;
 }
+
+int main() {
+    int numero_usuario;
+    int resultado;
+
+    printf("Digite um numero inteiro positivo: ");
+    scanf("%d", &numero_usuario);
+
+    // O programa chama a função usando o número digitado
+    resultado = soma_numeros(numero_usuario);
+
+    // Mostra o resultado na tela
+    printf("A soma de 1 ate %d eh: %d\n", numero_usuario, resultado);
+
+    return 0;
+}
