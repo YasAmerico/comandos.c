@@ -92,3 +92,26 @@ int eh_capicua(int n) {
     
     return original == invertido;
 }
+
+//fatorial duplo
+
+long long fatorial_duplo(int n) {
+    long long resultado = 1;
+
+    // Multiplica de 2 em 2, descendo até 1 ou 2
+    for (int i = n; i > 0; i -= 2) {
+        resultado *= i;
+    }
+
+    return resultado;
+}
+
+//ano bissexto(calculo exato)
+int eh_bissexto(int ano) {
+    // Regra exata: divisível por 4 E (não divisível por 100 OU divisível por 400)
+    if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)) {
+        return 1; // É bissexto (Verdadeiro)
+    } else {
+        return 0; // Não é bissexto (Falso)
+    }
+}
