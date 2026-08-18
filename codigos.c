@@ -81,3 +81,34 @@ int main() {
 
     return 0;
 }
+
+int main() {
+    int numero;
+
+    printf("Digite um numero inteiro positivo: ");
+    scanf("%d", &numero);
+
+    if (numero < 0) {
+        printf("Por favor, digite um numero maior ou igual a zero.\n");
+    } else {
+        long long res = fatorial_duplo(numero);
+        printf("O fatorial duplo (%d!!) e: %lld\n", numero, res);
+    }
+
+    return 0;
+}
+
+int main() {
+    int ano;
+
+    printf("Digite um ano: ");
+    scanf("%d", &ano);
+
+    if (eh_bissexto(ano)) {
+        printf("O ano %d e bissexto!\n", ano);
+    } else {
+        printf("O ano %d nao e bissexto.\n", ano);
+    }
+
+    return 0;
+}
