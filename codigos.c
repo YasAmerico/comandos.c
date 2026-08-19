@@ -133,3 +133,95 @@ int main() {
 
     return 0;
 }
+
+//soma dos elementos de um vetor
+int main() {
+    int tamanho;
+
+    printf("Digite a quantidade de elementos do vetor: ");
+    scanf("%d", &tamanho);
+
+    if (tamanho <= 0) {
+        printf("Por favor, insira um tamanho maior que zero.\n");
+        return 1;
+    }
+
+    int vetor[tamanho];
+
+    // Preenche o vetor com os dados do usuário
+    for (int i = 0; i < tamanho; i++) {
+        printf("Digite o elemento %d: ", i + 1);
+        scanf("%d", &vetor[i]);
+    }
+
+    // Calcula a soma chamando a função recursiva
+    int total = somar_vetor(vetor, tamanho);
+
+    printf("\nA soma de todos os elementos do vetor e: %d\n", total);
+
+    return 0;
+}
+
+//potencia
+int main() {
+    int base, expoente;
+
+    printf("Digite a base: ");
+    scanf("%d", &base);
+
+    printf("Digite o expoente (inteiro positivo): ");
+    scanf("%d", &expoente);
+
+    if (expoente < 0) {
+        printf("Por favor, insira um expoente maior ou igual a zero.\n");
+        return 1;
+    }
+
+    long long resultado = potencia(base, expoente);
+    printf("%d elevado a %d e: %lld\n", base, expoente, resultado);
+
+    return 0;
+}
+
+//MDC
+int main() {
+    int num1, num2;
+
+    printf("Digite o primeiro numero: ");
+    scanf("%d", &num1);
+
+    printf("Digite o segundo numero: ");
+    scanf("%d", &num2);
+
+    // Evita problemas caso o usuário digite números negativos
+    if (num1 < 0) num1 = -num1;
+    if (num2 < 0) num2 = -num2;
+
+    int resultado = mdc(num1, num2);
+    printf("O MDC de %d e %d e: %d\n", num1, num2, resultado);
+
+    return 0;
+}
+
+//Inverter strings
+int main() {
+    char texto[100]; // Array de tamanho 100 para guardar o texto de forma correta
+
+    printf("Digite uma string para inverter: ");
+    // Lê a string inteira, incluindo espaços
+    fgets(texto, sizeof(texto), stdin);
+
+    // Remove a quebra de linha (\n) que o fgets captura automaticamente
+    for (int i = 0; texto[i] != '\0'; i++) {
+        if (texto[i] == '\n') {
+            texto[i] = '\0';
+            break;
+        }
+    }
+
+    printf("String invertida: ");
+    imprimir_invertido(texto);
+    printf("\n");
+
+    return 0;
+}
