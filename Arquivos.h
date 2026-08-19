@@ -126,3 +126,47 @@ int fibonacci(int n) {
     }
     return fibonacci(n - 1) + fibonacci(n - 2);
 }
+
+//soma dos elementos de um vetor
+int somar_vetor(int vetor[], int tamanho) {
+    // Caso base: se o tamanho for 0, a soma é 0
+    if (tamanho == 0) {
+        return 0;
+    }
+    // Passo recursivo: pega o último elemento atual e soma com o restante do vetor
+    return vetor[tamanho - 1] + somar_vetor(vetor, tamanho - 1);
+}
+
+//potencia 
+long long potencia(int base, int expoente) {
+    // Caso base: qualquer número elevado a 0 é 1
+    if (expoente == 0) {
+        return 1;
+    }
+    // Passo recursivo: multiplica a base pelo resultado da próxima chamada
+    return base * potencia(base, expoente - 1);
+}
+
+//calcular o MDC de um número
+int mdc(int a, int b) {
+    // Caso base: se o segundo número for 0, o MDC é o próprio 'a'
+    if (b == 0) {
+        return a;
+    }
+    // Passo recursivo: o MDC de (a, b) é o mesmo que o MDC de (b, a % b)
+    return mdc(b, a % b);
+}
+
+//inverter uma string
+void imprimir_invertido(char *str) {
+    // Caso base: se chegar no caractere nulo ('\0'), que é o fim da string, para
+    if (*str == '\0') {
+        return;
+    }
+
+    // Passo recursivo: avança para o próximo caractere antes de imprimir
+    imprimir_invertido(str + 1);
+
+    // Na volta da recursão (desempilhamento), imprime o caractere atual
+    putchar(*str);
+}
