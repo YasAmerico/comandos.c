@@ -112,3 +112,24 @@ int main() {
 
     return 0;
 }
+
+//fibonacci
+int main() {
+    int termos;
+
+    printf("Digite o numero de termos da sequencia: ");
+    scanf("%d", &termos);
+
+    if (termos <= 0) {
+        printf("Por favor, insira um numero maior que zero.\n");
+        return 1;
+    }
+
+    printf("Sequencia de Fibonacci: ");
+    for (int i = 0; i < termos; i++) {
+        printf("%d ", fibonacci(i));
+    }
+    printf("\n");
+
+    return 0;
+}
